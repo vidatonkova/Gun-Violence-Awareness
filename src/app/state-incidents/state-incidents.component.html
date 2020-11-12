@@ -1,1 +1,72 @@
-<p>state-incidents works!</p>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="state-incidents.component.scss">
+
+    <!--Dropdown JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+    <div class="row">
+        <div class="col-sm-9">
+            <h1>Gun Violence in (stateName)</h1>
+            <br>
+            <br>
+            <h5 style="color:#bfbfbf">Links to three different incidents in the State</h5>
+            <br>
+            <button class="button" id="ccButton">Case 1</button>
+            <div class="divider"></div>
+            <button class="button" id="ccButton">Case 2</button>
+            <div class="divider"></div>
+            <button class="button" id="ccButton">Case 3</button>  
+          <div class="row">
+            <div class="col-5 col-sm-4">
+            </div>
+            <div class="col-8 col-sm-4">
+            </div>
+            <div class="col-7 col-sm-4">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-5 col-sm-4">
+                <h4>Total Number of Incidents:</h4>
+            </div>
+            <div class="col-8 col-sm-4">
+                #
+            </div>
+            <div class="col-5 col-sm-4">
+               <h4>(Graph here)</h4>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-5 col-sm-4">
+                <h4>Percentage of National Incidents that occur in the State: </h4>
+            </div>
+            <div class="col-8 col-sm-4">
+                _%
+            </div>
+            <div class="col-7 col-sm-4">
+            </div>
+          </div>
+        </div>
+      </div>   
+</body>
+
+<div>
+    <app-footer></app-footer>
+</div>
+
