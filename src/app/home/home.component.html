@@ -1,5 +1,94 @@
-<p>home works!</p>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<button class="button" id="ccButton" routerLink="/state-incidents">State Incidents</button>
-<button class="button" id="ccButton" routerLink="/stolen-weapon">Stolen Weapon</button>
-<button class="button" id="ccButton" routerLink="/weapon-type">Weapon Type</button>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="home.component.scss">
+
+    <!--Dropdown JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+</head>
+<body>
+        <h3>Please choose a filter:</h3>
+        <br>
+        <h5 style="color:#bfbfbf">***You can select one of the following filters to conduct your search. You can only choose one at a time.</h5>   
+
+    <hr>
+  
+        <div class="row">
+          <div class="col col-lg-3">
+            <h4>Choose a State</h4>
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select a State
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button">Alabama</button>
+                <button class="dropdown-item" type="button">Florida</button>
+                <button class="dropdown-item" type="button">Texas</button>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm">
+             
+            </div>         
+          <div class="col-sm">
+            <button class="button" id="ccButton" routerLink="/state-incidents">Apply</button>
+        </div>
+        </div>
+
+      <hr>
+
+        <div class="row">
+          <div class="col col-lg-3">
+            <h4>Stolen Weapon</h4>
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+        </div>
+          <div class="col-sm">
+            <button class="button" id="ccButton" routerLink="/stolen-weapon">Apply</button>
+        </div>
+        </div>
+
+      <hr>
+      
+        <div class="row">
+          <div class="col col-lg-3">
+            <h4>Weapon Type</h4>
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+        </div>          
+          <div class="col-sm">
+            <button class="button" id="ccButton" routerLink="/weapon-type">Apply</button>
+        </div>
+        </div>
+</body>
+

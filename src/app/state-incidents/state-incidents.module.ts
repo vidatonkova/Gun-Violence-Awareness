@@ -12,3 +12,4 @@ import { StateIncidentsComponent } from "./state-incidents.component"
   ]
 })
 export class StateIncidentsModule { }
+

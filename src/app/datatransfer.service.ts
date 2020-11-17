@@ -14,8 +14,12 @@ export class DataTransferService {
   constructor(private httpClient: HttpClient) { }
 
   helpMe(){
+    var Heap = require('heap');
+    var heap = new Heap();
+
     this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
-      console.log(data1);
+      heap.push(data1[0]);
+      console.log(heap.peek());
     })
     this.httpClient.get("assets/gundata_part2.json").subscribe(data2 =>{
       console.log(data2);
@@ -44,5 +48,6 @@ export class DataTransferService {
     this.httpClient.get("assets/gundata_part10.json").subscribe(data =>{
       console.log(data);
     })
+    
   }
 }
