@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
     var arr: any[];
     this.DataTransferService.helpMe();
     
-
   }
 
  
