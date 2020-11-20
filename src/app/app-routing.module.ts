@@ -15,8 +15,8 @@ const routes: Routes = [
     loadChildren : () => import('./state-incidents/state-incidents.module').then(m => m.StateIncidentsModule)
   },
   {
-    path:"stolen-weapon",
-    loadChildren : () => import('./stolen-weapon/stolen-weapon.module').then(m => m.StolenWeaponModule)
+    path:"mass-incidents",
+    loadChildren : () => import('./mass-incidents/mass-incidents.module').then(m => m.MassIncidentsModule)
   },
   {
     path:"weapon-type",
