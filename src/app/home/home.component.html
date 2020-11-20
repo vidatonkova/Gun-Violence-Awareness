@@ -38,10 +38,10 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select a State
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">Alabama</button>
-                <button class="dropdown-item" type="button">Florida</button>
-                <button class="dropdown-item" type="button">Texas</button>
+                <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2">
+                <li *ngFor = "let state of states">
+                <button class="dropdown-item" type="button">{{state}}</button>
+                </li>
                 </div>
             </div>
           </div>
