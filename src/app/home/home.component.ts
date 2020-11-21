@@ -21,10 +21,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     var arr: any[];
-    this.DataTransferService.helpMe();
+    //this.DataTransferService.massShootingHeap();
     
   }
-
+//function for state incidents
+//map function
+//heap function
+//store in datatransfer service
  
 
 
