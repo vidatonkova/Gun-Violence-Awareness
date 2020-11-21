@@ -10,6 +10,7 @@ export class StateIncidentsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    //call function to retrieve data
   }
 
 }
