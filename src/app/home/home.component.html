@@ -38,10 +38,10 @@
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select a State
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button class="dropdown-item" type="button">{{states[2]}}</button>
-                <button class="dropdown-item" type="button">Florida</button>
-                <button class="dropdown-item" type="button">Texas</button>
+                <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2">
+                <li *ngFor = "let state of states">
+                <button class="dropdown-item" type="button">{{state}}</button>
+                </li>
                 </div>
             </div>
           </div>
@@ -57,7 +57,7 @@
 
         <div class="row">
           <div class="col col-lg-3">
-            <h4>Stolen Weapon</h4>
+            <h4>Mass Incidents</h4>
           </div>
           <div class="col-sm">
           </div>
@@ -68,7 +68,7 @@
           <div class="col-sm">
         </div>
           <div class="col-sm">
-            <button class="button" id="ccButton" routerLink="/stolen-weapon">Apply</button>
+            <button class="button" id="ccButton" routerLink="/mass-incidents">Apply</button>
         </div>
         </div>
 
