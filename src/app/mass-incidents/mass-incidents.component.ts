@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataTransferService } from '../datatransfer.service'
 
 @Component({
   selector: 'app-mass-incidents',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MassIncidentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private DataTransferService: DataTransferService) { }
 
   ngOnInit(): void {
+    //this.DataTransferService.massShootingHeap();
+    //this.DataTransferService.massShootingMap();
+    //make get functions later to retrieve data for heap
+    
   }
 
 }
