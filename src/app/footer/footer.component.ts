@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   public heaptime;
+  public maptime;
   constructor() {
     this.heaptime = localStorage.getItem('heaptime');
+    this.maptime = localStorage.getItem('maptime');
+
    }
 
   ngOnInit(): void {

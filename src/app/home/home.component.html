@@ -24,7 +24,7 @@
         <h5 style="color:#bfbfbf">***You can select one of the following filters to conduct your search. You can only choose one at a time.</h5>   
 
     <hr>
-  
+    <form [formGroup]="form" (ngSubmit)="submit()">
         <div class="row">
           <div class="col col-lg-3">
             <h4>Choose a State</h4>
@@ -34,25 +34,24 @@
           <div class="col-sm">
           </div>
           <div class="col-sm">
+
             <div class="dropdown">
+              <select class="custom-select" formControlName="state">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select a State
                 </button>
-                <div class="dropdown-menu scrollable-menu" aria-labelledby="dropdownMenu2">
-                <li *ngFor = "let state of states">
-                <button class="dropdown-item" type="button">{{state}}</button>
-                </li>
-                </div>
+                  <option *ngFor = "let state of states" [value]="state" class="dropdown-item" type="button">{{state}}</option>
+                </select>
             </div>
           </div>
           <div class="col-sm">
              
-            </div>         
+          </div>         
           <div class="col-sm">
-            <button class="button" id="ccButton" routerLink="/state-incidents">Apply</button>
+            <button class="button" type="submit" id="ccButton" >Apply</button>
+          </div>
         </div>
-        </div>
-
+        </form>
       <hr>
 
         <div class="row">
@@ -68,7 +67,7 @@
           <div class="col-sm">
         </div>
           <div class="col-sm">
-            <button class="button" id="ccButton" routerLink="/mass-incidents">Apply</button>
+            <button class="button" id="ccButton" (ngSubmit)="submitForMass()" routerLink="/mass-incidents">Apply</button>
         </div>
         </div>
 
