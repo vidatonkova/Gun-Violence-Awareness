@@ -23,7 +23,7 @@
 <body>
     <div class="row">
         <div class="col-sm-9">
-            <h1>Gun Violence in (stateName)</h1>
+            <h1>Gun Violence in {{state}}</h1>
             <br>
             <br>
             <h5 style="color:#bfbfbf">Links to three different incidents in the State</h5>
@@ -46,7 +46,7 @@
                 <h4>Total Number of Incidents:</h4>
             </div>
             <div class="col-8 col-sm-4">
-                #
+                {{numInc}}
             </div>
             <div class="col-5 col-sm-4">
                <h4>(Graph here)</h4>
@@ -57,7 +57,7 @@
                 <h4>Percentage of National Incidents that occur in the State: </h4>
             </div>
             <div class="col-8 col-sm-4">
-                _%
+                {{percentage}}%
             </div>
             <div class="col-7 col-sm-4">
             </div>

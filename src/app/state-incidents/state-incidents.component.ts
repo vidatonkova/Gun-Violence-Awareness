@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./state-incidents.component.scss']
 })
 export class StateIncidentsComponent implements OnInit {
+  public state;
+  public numInc;
+  public percentage;
+  constructor() { 
+    this.state = localStorage.getItem('state');
+    this.numInc = localStorage.getItem('numInstance');
+    this.percentage = localStorage.getItem('percentage');
 
-  constructor() { }
+
+  }
 
   ngOnInit(): void {
+    //call function to retrieve data
   }
 
 }
