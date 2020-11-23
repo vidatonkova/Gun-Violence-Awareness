@@ -41,7 +41,9 @@ export class HomeComponent implements OnInit {
   submit(){
     console.log(this.form.value);
     localStorage.setItem('state', this.form.value.state);
+    this.DataTransferService.stateMap();
     this.DataTransferService.stateHeap();
+    
     this.router.navigate(['/state-incidents']);
   }
 
@@ -52,9 +54,7 @@ export class HomeComponent implements OnInit {
     this.DataTransferService.massShootingMap();
   }
 
-  submitForState(){
-    console.log(this.selectedState);
-  }
+  
 //function for state incidents
 //map function
 //heap function
