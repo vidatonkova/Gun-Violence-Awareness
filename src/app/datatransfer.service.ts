@@ -555,6 +555,168 @@ export class DataTransferService {
     })
   }
 
+  printStateMap(hash ,x){
+    var stateToFind = localStorage.getItem("state");
+    var numIns = hash.get(stateToFind);
+    console.log(numIns);
+    
+    var y = performance.now();
+      var z = y-x;
+      var a = z.toString();
+      console.log(a);
+      localStorage.setItem('maptime', a);
+  }
+
+  stateMap(){
+    //var d = new Date();
+    var x = performance.now();
+    var HashMap = require('hashmap');
+    var hash = new HashMap();
+
+    this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
+      for(let i = 0; i < 9225; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part2.json").subscribe(data1 =>{
+      for(let i = 0; i < 9225; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part3.json").subscribe(data1 =>{
+      for(let i = 0; i < 9200; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part4.json").subscribe(data1 =>{
+      for(let i = 0; i < 9163; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part5.json").subscribe(data1 =>{
+      for(let i = 0; i < 9132; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part6.json").subscribe(data1 =>{
+      for(let i = 0; i < 9132; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part7.json").subscribe(data1 =>{
+      for(let i = 0; i < 9253; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part8.json").subscribe(data1 =>{
+      for(let i = 0; i < 9384; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part9.json").subscribe(data1 =>{
+      for(let i = 0; i < 9360; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+    })
+    this.httpClient.get("assets/gundata_part10.json").subscribe(data1 =>{
+      for(let i = 0; i < 9769; i++){ 
+        //data1[i].state
+        if(hash.has(data1[i].state)){
+          var currVal = hash.get(data1[i].state);
+          hash.delete(data1[i].state);
+          currVal = currVal + 1;
+          hash.set(data1[i].state, currVal);
+        }else{
+          hash.set(data1[i].state, 1);
+        }
+      }
+      //console.log(hash.get("Oklahoma"));
+      this.printStateMap(hash, x);
+    })
+
+  }
+
   printValsStateHeap(heap, x){
     var stateFound = false;
     var totalCases = 0;
