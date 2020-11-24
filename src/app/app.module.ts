@@ -7,7 +7,12 @@ import { AppComponent } from './app.component';
 import { DataTransferService } from './datatransfer.service';
 
 import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+
+import {Chart} from 'chart.js';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +23,7 @@ import { FooterComponent } from './footer/footer.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
+    
   ],
   providers: [DataTransferService],
   bootstrap: [AppComponent]
