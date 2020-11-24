@@ -38,7 +38,17 @@
               _%
             </div>
             <div class="col-5 col-sm-4">
-               <h4>(Graph here)</h4>
+               <h4><canvas
+                baseChart
+                [chartType]="'bar'"
+                [datasets]="barGraphData"
+                [labels]="barGraphLabels"
+                [options]="chartOptions"
+                [legend]="false"
+                >
+            </canvas>
+            <!-- (chartClick)="onChartClick($event)" -->
+        </h4>
           </div>
           </div>
           <div class="row">

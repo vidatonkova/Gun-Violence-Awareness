@@ -10,8 +10,26 @@ import { HttpClient } from "@angular/common/http";
   providedIn: 'root'
 })
 export class DataTransferService {
+  set_of_guns: [number, number][];
+  is_Mass: any;
+  not_Mass: any;
   constructor(private httpClient: HttpClient) { 
+  this.set_of_guns;
+  this.is_Mass;
+  this.not_Mass;
   }
+
+public get setOfGuns() {
+  return this.setOfGuns;
+}
+
+public get isMass(){
+  return this.is_Mass;
+}
+
+public get notMass(){
+  return this.not_Mass;
+}
 
   printValsMap(hash ,x){
     var notMass = hash.get("false");
@@ -379,14 +397,38 @@ export class DataTransferService {
   }
 
   printValsWeapHeap(heap ,x){
-      console.log(heap.peek());
-      heap.pop();
+     //var orange: Pair<number,number> = [0,0];
+      //food.push(orange);
       //go through and look for top three values and store in array as discussed previously
+      type Pair<T,K> = [T,K];
+      type Pairs<T,K> = Pair<T,K>[];
+      var food: Pairs<number, number> = [,];
+      
+      var currentValue = heap.peek();
+      var counter = 1;
+      
+      while(heap.size()>0){
+        heap.pop();
+        if(currentValue != heap.peek()){
+          //assign curr val's counter to itself
+          var apple: Pair<number, number> = [currentValue, counter];
+          food.push(apple);
+          
+          currentValue = heap.peek();
+          counter = 1;
+          
+        }else if(currentValue == heap.peek()){
+          currentValue = heap.peek();
+          counter++;
+        }
+      }
+      console.log(food);
       var y = performance.now();
       var z = y-x;
       var a = z.toString();
       console.log(a);
       localStorage.setItem('heaptime', a);
+      this.set_of_guns = food;
   }
 
   weapTypeHeap(){
@@ -396,8 +438,8 @@ export class DataTransferService {
     var heap = new Heap();
     this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
       for(let i = 0; i < 9225; i++){ 
-        if(data1[i].gun_type != undefined){
-          heap.push(data1[i].gun_type);
+        if(data1[i].n_guns_involved != undefined){
+          heap.push(data1[i].n_guns_involved);
         }
     }
       
@@ -405,66 +447,66 @@ export class DataTransferService {
     this.httpClient.get("assets/gundata_part2.json").subscribe(data2 =>{
       //console.log(data2); //9164
       for(let i = 0; i < 9225; i++){ 
-          if(data2[i].gun_type != undefined){
-            heap.push(data2[i].gun_type);
+          if(data2[i].n_guns_involved != undefined){
+            heap.push(data2[i].n_guns_involved);
           }
     }
     })
     this.httpClient.get("assets/gundata_part3.json").subscribe(data3 =>{
       //console.log(data3); //9200
       for(let i = 0; i < 9200; i++){ 
-          if(data3[i].gun_type != undefined){
-            heap.push(data3[i].gun_type);
+          if(data3[i].n_guns_involved != undefined){
+            heap.push(data3[i].n_guns_involved);
           }
     }
     })
     this.httpClient.get("assets/gundata_part4.json").subscribe(data4 =>{
       for(let i = 0; i < 9163; i++){ 
-          if(data4[i].gun_type != undefined){
-            heap.push(data4[i].gun_type);
+          if(data4[i].n_guns_involved != undefined){
+            heap.push(data4[i].n_guns_involved);
           }
       }
     })
     this.httpClient.get("assets/gundata_part5.json").subscribe(data5 =>{
       for(let i = 0; i < 9132; i++){ 
-          if(data5[i].gun_type != undefined){
-            heap.push(data5[i].gun_type);
+          if(data5[i].n_guns_involved != undefined){
+            heap.push(data5[i].n_guns_involved);
           }
       }
     })
     this.httpClient.get("assets/gundata_part6.json").subscribe(data6 =>{
       //console.log(data6);
       for(let i = 0; i < 9132; i++){ 
-          if(data6[i].gun_type != undefined){
-            heap.push(data6[i].gun_type);
+          if(data6[i].n_guns_involved != undefined){
+            heap.push(data6[i].n_guns_involved);
           }
     }
     })
     this.httpClient.get("assets/gundata_part7.json").subscribe(data7 =>{
       for(let i = 0; i < 9253; i++){ 
-          if(data7[i].gun_type != undefined){
-            heap.push(data7[i].gun_type);
+          if(data7[i].n_guns_involved != undefined){
+            heap.push(data7[i].n_guns_involved);
           }
       }
     })
     this.httpClient.get("assets/gundata_part8.json").subscribe(data8 =>{
       for(let i = 0; i < 9384; i++){ 
-          if(data8[i].gun_type != undefined){
-            heap.push(data8[i].gun_type);
+          if(data8[i].n_guns_involved != undefined){
+            heap.push(data8[i].n_guns_involved);
           }
       }
     })
     this.httpClient.get("assets/gundata_part9.json").subscribe(data9 =>{
       for(let i = 0; i < 9360; i++){ 
-          if(data9[i].gun_type != undefined){
-            heap.push(data9[i].gun_type);
+          if(data9[i].n_guns_involved != undefined){
+            heap.push(data9[i].n_guns_involved);
           }
       }
     })
     this.httpClient.get("assets/gundata_part10.json").subscribe(data10 =>{
       for(let i = 0; i < 9769; i++){ 
-          if(data10[i].gun_type != undefined){
-            heap.push(data10[i].gun_type);
+          if(data10[i].n_guns_involved != undefined){
+            heap.push(data10[i].n_guns_involved);
           }
       }
       
