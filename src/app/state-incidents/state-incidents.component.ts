@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartType } from 'chart.js';
+import { Label, MultiDataSet } from 'ng2-charts';
 
 @Component({
   selector: 'app-state-incidents',
@@ -9,6 +11,13 @@ export class StateIncidentsComponent implements OnInit {
   public state;
   public numInc;
   public percentage;
+
+  public doughnutChartLabels: Label[] = [localStorage.getItem('state'), 'Not'];
+  public doughnutChartData: MultiDataSet = [
+    [Number(localStorage.getItem('numInstance')), Number(localStorage.getItem('totalCases'))]
+  ];
+  public doughnutChartType: ChartType = 'pie';
+
   constructor() { 
     //this.state = localStorage.getItem('state');
     //this.numInc = localStorage.getItem('numInstance');

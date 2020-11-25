@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChartsModule } from 'ng2-charts'
 
 import { StateIncidentsRoutingModule } from "./state-incidents-routing.module"
 import { StateIncidentsComponent } from "./state-incidents.component"
@@ -8,7 +9,8 @@ import { StateIncidentsComponent } from "./state-incidents.component"
   declarations: [StateIncidentsComponent],
   imports: [
     CommonModule,
-    StateIncidentsRoutingModule
+    StateIncidentsRoutingModule,
+    ChartsModule
   ]
 })
 export class StateIncidentsModule { }

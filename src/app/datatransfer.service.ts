@@ -14,9 +14,9 @@ export class DataTransferService {
   is_Mass: any;
   not_Mass: any;
   constructor(private httpClient: HttpClient) { 
-  this.set_of_guns;
-  this.is_Mass;
-  this.not_Mass;
+    this.set_of_guns;
+    this.is_Mass;
+    this.not_Mass;
   }
 
 public get setOfGuns() {
@@ -24,11 +24,11 @@ public get setOfGuns() {
 }
 
 public get isMass(){
-  return this.is_Mass;
+  return localStorage.getItem("isMass");
 }
 
 public get notMass(){
-  return this.not_Mass;
+  return localStorage.getItem("notMass");
 }
 
   printValsMap(hash ,x){
@@ -248,23 +248,27 @@ public get notMass(){
   }
 
   printVals(heap ,x){
-    var notMass = 0;
-    var mass = 0;
+    var notmass = 0;
+    var Mass = 0;
     while(heap.top() == 0){
-      notMass++;
+      notmass++;
       heap.pop();
     }
     while(heap.top() == 1){
-      mass++;
+      Mass++;
       heap.pop();
     }
-    console.log(notMass);
-    console.log(mass);
+    console.log(notmass);
+    console.log(Mass);
+    this.is_Mass = Mass;
+    this.not_Mass = notmass;
     var y = performance.now();
       var z = y-x;
       var a = z.toString();
       console.log(a);
       localStorage.setItem('heaptime', a);
+      localStorage.setItem('isMass', Mass.toString());
+      localStorage.setItem('notMass', notmass.toString());
   }
 
   massShootingHeap(){
@@ -774,6 +778,7 @@ public get notMass(){
     localStorage.setItem("numInstance", numInstances.toString());
     var percentageOfInc = (numInstances / totalCases) * 100;
     localStorage.setItem("percentage", percentageOfInc.toString());
+    localStorage.setItem("totalCases", totalCases.toString())
 
   }
 }
