@@ -38,15 +38,20 @@
               _%
             </div>
             <div class="col-5 col-sm-4">
-               <h4><canvas
-                baseChart
-                [chartType]="'bar'"
-                [datasets]="barGraphData"
-                [labels]="barGraphLabels"
-                [options]="chartOptions"
-                [legend]="false"
-                >
-            </canvas>
+               <h4>
+                <div style="display: block">
+                  <div style="display: block">
+                    <div>
+                      <div class="chart-wrapper">
+                        <canvas baseChart
+                          [data]="doughnutChartData"
+                          [labels]="doughnutChartLabels"
+                          [chartType]="doughnutChartType">
+                        </canvas>
+                    </div>
+                    </div>
+                  </div>
+                </div>
             <!-- (chartClick)="onChartClick($event)" -->
         </h4>
           </div>

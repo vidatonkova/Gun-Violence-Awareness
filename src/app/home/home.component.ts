@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
   submitForMass(){
     this.DataTransferService.massShootingHeap();
     this.DataTransferService.massShootingMap();
+    this.router.navigate(['/mass-incidents']);
   }
 
   

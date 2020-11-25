@@ -10,8 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 import {Chart} from 'chart.js';
-
-
+import { ChartsModule } from 'ng2-charts'
 
 @NgModule({
   declarations: [
@@ -22,7 +21,8 @@ import {Chart} from 'chart.js';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
     
   ],
   providers: [DataTransferService],
