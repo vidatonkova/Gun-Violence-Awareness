@@ -18,9 +18,9 @@ export class MassIncidentsComponent implements OnInit {
   ]
   
   public doughnutChartColors: Color[] = [
+    {backgroundColor:["#FF5800","#444444","#FFB414"]},
     {backgroundColor:["#9E120E","#FF5800","#FFB414"]},
-    {backgroundColor:["#9E120E","#FF5800","#FFB414"]},
-    {backgroundColor:["#9E120E","#FF5800","#FFB414"]}
+    
   ];
 
   
