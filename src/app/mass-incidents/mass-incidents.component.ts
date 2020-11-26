@@ -16,12 +16,15 @@ export class MassIncidentsComponent implements OnInit {
     [Number(localStorage.getItem('isMass')), Number(localStorage.getItem('notMass'))]
     
   ]
-  backgroundColor = ["rgba(0,0,0,0.2)","rgba(255,99,132,0.2)"]
-  ;
+  
+  public doughnutChartColors: Color[] = [
+    {backgroundColor:["#9E120E","#FF5800","#FFB414"]},
+    {backgroundColor:["#9E120E","#FF5800","#FFB414"]},
+    {backgroundColor:["#9E120E","#FF5800","#FFB414"]}
+  ];
 
   
   public doughnutChartType: ChartType = 'doughnut';
- // public doughnutChartcolor: ["rgba(0,0,0,0.2)","rgba(255,99,132,0.2)"];
   
   public doughnutChartOptions:any = {
     responsive: true,
