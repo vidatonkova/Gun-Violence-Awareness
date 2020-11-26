@@ -11,10 +11,20 @@ import { Color, Label, MultiDataSet } from 'ng2-charts';
 export class MassIncidentsComponent implements OnInit {
  
   public doughnutChartLabels: Label[] = ['Is', 'Not'];
-  public doughnutChartData: MultiDataSet = [
+  public doughnutChartData: 
+  MultiDataSet = [
     [Number(localStorage.getItem('isMass')), Number(localStorage.getItem('notMass'))]
+    
   ];
-  public doughnutChartType: ChartType = 'pie';
+  
+  public doughnutChartType: ChartType = 'doughnut';
+  public doughnutChartbackgroundColor: ["rgba(0,0,0,0.2)","rgba(255,99,132,0.2)"];
+  
+  public doughnutChartOptions:any = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
+
 
   constructor(private DataTransferService: DataTransferService) {
     var is = this.DataTransferService.isMass;
