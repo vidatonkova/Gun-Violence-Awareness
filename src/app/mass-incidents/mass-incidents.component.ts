@@ -15,10 +15,13 @@ export class MassIncidentsComponent implements OnInit {
   MultiDataSet = [
     [Number(localStorage.getItem('isMass')), Number(localStorage.getItem('notMass'))]
     
-  ];
+  ]
+  backgroundColor = ["rgba(0,0,0,0.2)","rgba(255,99,132,0.2)"]
+  ;
+
   
   public doughnutChartType: ChartType = 'doughnut';
-  public doughnutChartbackgroundColor: ["rgba(0,0,0,0.2)","rgba(255,99,132,0.2)"];
+ // public doughnutChartcolor: ["rgba(0,0,0,0.2)","rgba(255,99,132,0.2)"];
   
   public doughnutChartOptions:any = {
     responsive: true,
