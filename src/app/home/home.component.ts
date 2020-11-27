@@ -55,6 +55,14 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/mass-incidents']);
   }
 
+  submitForGuns(){
+    console.log("yay");
+    this.DataTransferService.weapTypeHeap();
+    this.DataTransferService.weapTypeMap();
+    this.router.navigate(['./weapon-type']);
+
+  }
+
   
 //function for state incidents
 //map function
