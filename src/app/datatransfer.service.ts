@@ -518,6 +518,174 @@ public get notMass(){
     })
   }
 
+  weapTypeMap(){
+    var d = new Date();
+    var x = performance.now();
+    var HashMap = require('hashmap');
+    var hash = new HashMap();
+    this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
+      for(let i = 0; i < 9225; i++){ 
+        if(hash.has(data1[i].n_guns_involved) == false){
+          hash.set(data1[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data1[i].n_guns_involved) == true){
+          var currVal = hash.get(data1[i].n_guns_involved);
+          hash.delete(data1[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data1[i].n_guns_involved, currVal);
+      }
+    }
+      
+    })
+    this.httpClient.get("assets/gundata_part2.json").subscribe(data =>{
+      //console.log(data2); //9164
+      for(let i = 0; i < 9225; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    })
+    this.httpClient.get("assets/gundata_part3.json").subscribe(data =>{
+      //console.log(data3); //9200
+      for(let i = 0; i < 9200; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    })
+    this.httpClient.get("assets/gundata_part4.json").subscribe(data =>{
+      for(let i = 0; i < 9163; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    })
+    this.httpClient.get("assets/gundata_part5.json").subscribe(data =>{
+      for(let i = 0; i < 9132; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    })
+    this.httpClient.get("assets/gundata_part6.json").subscribe(data =>{
+      //console.log(data6);
+      for(let i = 0; i < 9132; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    })
+    this.httpClient.get("assets/gundata_part7.json").subscribe(data =>{
+      for(let i = 0; i < 9253; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    })
+    this.httpClient.get("assets/gundata_part8.json").subscribe(data =>{
+      for(let i = 0; i < 9384; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    })
+    this.httpClient.get("assets/gundata_part9.json").subscribe(data =>{
+      for(let i = 0; i < 9360; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    })
+    this.httpClient.get("assets/gundata_part10.json").subscribe(data =>{
+      for(let i = 0; i < 9769; i++){ 
+        if(hash.has(data[i].n_guns_involved) == false){
+          hash.set(data[i].n_guns_involved, 1);
+        }
+        else if(hash.has(data[i].n_guns_involved) == true){
+          var currVal = hash.get(data[i].n_guns_involved);
+          hash.delete(data[i].n_guns_involved);
+          currVal = currVal + 1;
+          hash.set(data[i].n_guns_involved, currVal);
+      }
+    }
+    this.printGunMap(hash, x);
+    })
+  }
+
+  printGunMap(hash, x){
+    type Pair<T,K> = [T,K];
+      type Pairs<T,K> = Pair<T,K>[];
+      var mapPairs: Pairs<number, number> = [,];
+      var i = 1;
+      while(hash.has(i) && i < 30){
+        if(hash.has(i)){
+          //assign curr val's counter to itself
+          var apple: Pair<number, number> = [i, hash.get(i)];
+          mapPairs.push(apple);
+          
+          
+          i++;
+          
+        }else{
+          i++;
+        }
+      }
+
+    var y = performance.now();
+    var z = y-x;
+    var a = z.toString();
+    console.log(a);
+    localStorage.setItem('maptime', a);
+  }
+
   stateHeap(){
     var d = new Date();
     var x = performance.now();
