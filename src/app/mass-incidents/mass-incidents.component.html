@@ -21,7 +21,7 @@
 <body>
     <div class="row">
         <div class="col-sm-9">
-            <h1>Mass Incidents Data</h1>
+            <h1>Mass-Shooting Incidents Data</h1>
           <div class="row">
             <div class="col-5 col-sm-4">
             </div>
@@ -40,17 +40,16 @@
             <div class="col-5 col-sm-4">
                <h4>
                 <div style="display: block">
-                  <div style="display: block">
                     <div>
                       <div class="chart-wrapper">
                         <canvas baseChart
                           [data]="doughnutChartData"
                           [labels]="doughnutChartLabels"
+                          [colors]="doughnutChartColors"
                           [chartType]="doughnutChartType">
                         </canvas>
                     </div>
                     </div>
-                  </div>
                 </div>
             <!-- (chartClick)="onChartClick($event)" -->
         </h4>
