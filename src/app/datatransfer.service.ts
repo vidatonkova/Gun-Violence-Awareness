@@ -19,8 +19,12 @@ export class DataTransferService {
     this.not_Mass;
   }
 
+public set setOfGuns(x){
+  this.set_of_guns = x;
+}
 public get setOfGuns() {
-  return this.setOfGuns;
+  console.log("ye");
+  return this.set_of_guns;
 }
 
 public get isMass(){
@@ -269,6 +273,7 @@ public get notMass(){
       localStorage.setItem('heaptime', a);
       localStorage.setItem('isMass', Mass.toString());
       localStorage.setItem('notMass', notmass.toString());
+      localStorage.setItem("massPerc", (this.is_Mass/(this.is_Mass+this.not_Mass)*100).toString());
   }
 
   massShootingHeap(){
@@ -669,9 +674,7 @@ public get notMass(){
         if(hash.has(i)){
           //assign curr val's counter to itself
           var apple: Pair<number, number> = [i, hash.get(i)];
-          mapPairs.push(apple);
-          
-          
+          mapPairs.push(apple);        
           i++;
           
         }else{

@@ -17,6 +17,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
     var heaptime = localStorage.getItem('heaptime');
     console.log(heaptime)
+    
   }
 
 }
