@@ -30,6 +30,7 @@ export class MassIncidentsComponent implements OnInit {
     responsive: true,
     maintainAspectRatio: false,
   };
+  perc: string;
 
 
   constructor(private DataTransferService: DataTransferService) {
@@ -41,7 +42,8 @@ export class MassIncidentsComponent implements OnInit {
 
   ngOnInit(): void {
     var is = this.DataTransferService.isMass;
-    var not = this.DataTransferService.notMass
+    var not = this.DataTransferService.notMass;
+    this.perc = localStorage.getItem("massPerc");
    console.log(is)
     
   }

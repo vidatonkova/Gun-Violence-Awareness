@@ -32,13 +32,21 @@
           </div>
           <div class="row">
             <div class="col-5 col-sm-4">
-              <h4>Most Common Weapon Type:</h4>
+              <h4>Information About This Chart:</h4>
             </div>
             <div class="col-8 col-sm-4">
-              (string)
+              We chose to only show data from 1-30 guns because some of the larger instances included gun shows where specific instances of gun violence did not occur.
             </div>
             <div class="col-5 col-sm-4">
-               <h4>(Graph here)</h4>
+               <h4><div class="chart-wrapper" style="height:2000px; width:500px">
+                <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"
+                  [options] = "doughnutChartOptions"
+                  >
+                </canvas>
+            </div></h4>
           </div>
           </div>
           <div class="row">
