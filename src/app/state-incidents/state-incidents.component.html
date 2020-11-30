@@ -25,14 +25,9 @@
         <div class="col-sm-9">
             <h1>Gun Violence in {{state}}</h1>
             <br>
-            <br>
-            <h5 style="color:#bfbfbf">Links to three different incidents in the State</h5>
-            <br>
-            <button class="button" id="ccButton">Case 1</button>
-            <div class="divider"></div>
-            <button class="button" id="ccButton">Case 2</button>
-            <div class="divider"></div>
-            <button class="button" id="ccButton">Case 3</button>  
+            <h5 style="color:#bfbfbf"></h5>
+            
+          
           <div class="row">
             <div class="col-5 col-sm-4">
             </div>
@@ -48,17 +43,7 @@
             <div class="col-8 col-sm-4">
                 {{numInc}}
             </div>
-            <div class="col-5 col-sm-4">
-               <h4>
-                <div class="chart-wrapper">
-                  <canvas baseChart
-                    [data]="doughnutChartData"
-                    [labels]="doughnutChartLabels"
-                    [chartType]="doughnutChartType">
-                  </canvas>
-              </div>
-               </h4>
-          </div>
+            
           </div>
           <div class="row">
             <div class="col-5 col-sm-4">
@@ -68,6 +53,18 @@
                 {{percentage}}%
             </div>
             <div class="col-7 col-sm-4">
+              <div class="display: block">
+                <h4>
+                 <div class="chart-wrapper">
+                   <canvas baseChart
+                     [data]="doughnutChartData"
+                     [labels]="doughnutChartLabels"
+                     [colors]="doughnutChartColors"
+                     [chartType]="doughnutChartType">
+                   </canvas>
+               </div>
+                </h4>
+           </div>
             </div>
           </div>
         </div>
