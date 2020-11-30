@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.DataTransferService.weapTypeHeap();
+    localStorage.setItem("refresh", "false");
   }
 
   form = new FormGroup({
@@ -50,9 +51,18 @@ export class HomeComponent implements OnInit {
 
   
   submitForMass(){
+    console.log("made");
     this.DataTransferService.massShootingHeap();
     this.DataTransferService.massShootingMap();
     this.router.navigate(['/mass-incidents']);
+  }
+
+  submitForGuns(){
+    console.log("yay");
+    this.DataTransferService.weapTypeHeap();
+    this.DataTransferService.weapTypeMap();
+    this.router.navigate(['./weapon-type']);
+
   }
 
   
