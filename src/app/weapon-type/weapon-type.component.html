@@ -31,18 +31,22 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-5 col-sm-4">
+            <div class="col-5 ">
               <h4>Information About This Chart:</h4>
+            <br>
+            This chart is meant to showcase the number of guns involved/collected at each incident of gun violence. 
+            <br>
+            <br>
+            We chose to show data from 1-4 number of guns and a separate category for 5+ guns. 
+            This is because some of the larger instances included gun shows where specific instances of gun violence did not occur.
             </div>
             <div class="col-8 col-sm-4">
-              We chose to only show data from 1-30 guns because some of the larger instances included gun shows where specific instances of gun violence did not occur.
-            </div>
-            <div class="col-5 col-sm-4">
-               <h4><div class="chart-wrapper" style="height:2000px; width:500px">
+               <h4><div class="chart-wrapper">
                 <canvas baseChart
                   [data]="doughnutChartData"
                   [labels]="doughnutChartLabels"
                   [chartType]="doughnutChartType"
+                  [colors]="doughnutChartColors"
                   [options] = "doughnutChartOptions"
                   >
                 </canvas>
