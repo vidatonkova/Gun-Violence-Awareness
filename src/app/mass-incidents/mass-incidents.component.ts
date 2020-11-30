@@ -9,7 +9,7 @@ import { Color, Label, MultiDataSet } from 'ng2-charts';
   styleUrls: ['./mass-incidents.component.scss']
 })
 export class MassIncidentsComponent implements OnInit {
- 
+  public percent;
   public doughnutChartLabels: Label[] = ['Is', 'Not'];
   public doughnutChartData: 
   MultiDataSet = [
@@ -18,9 +18,10 @@ export class MassIncidentsComponent implements OnInit {
   ]
   
   public doughnutChartColors: Color[] = [
-    {backgroundColor:["#FF5800","#444444","#FFB414"]},
-    {backgroundColor:["#9E120E","#FF5800","#FFB414"]},
-    
+    {backgroundColor:["#FF5800","#ffb347","#FFB414"],
+    //borderColor:["#000000","#000000"]
+   
+    }
   ];
 
   
@@ -36,6 +37,7 @@ export class MassIncidentsComponent implements OnInit {
   constructor(private DataTransferService: DataTransferService) {
     var is = this.DataTransferService.isMass;
     var not = this.DataTransferService.notMass
+  
    console.log(Number(localStorage.getItem("isMass")))
    
   }
@@ -45,7 +47,10 @@ export class MassIncidentsComponent implements OnInit {
     var not = this.DataTransferService.notMass;
     this.perc = localStorage.getItem("massPerc");
    console.log(is)
+   var ab = parseFloat(is);
+   var bc = parseFloat(not);
     
+   this.percent = (ab/bc).toFixed(5);
   }
 
 }
