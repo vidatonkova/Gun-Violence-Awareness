@@ -54,5 +54,12 @@ body{
   }
 
 
+.chart-wrapper{
+    position: relative;
+    margin: auto;
+    height: 225%;
+    width: 225%;
+    transform: translate3d(50px, -50px, 0);
 
-
+}
+// style="height:2000px; width:500px"

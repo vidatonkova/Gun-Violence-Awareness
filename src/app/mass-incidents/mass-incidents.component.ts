@@ -19,7 +19,7 @@ export class MassIncidentsComponent implements OnInit {
   
   public doughnutChartColors: Color[] = [
     {backgroundColor:["#FF5800","#ffb347","#FFB414"],
-    //borderColor:["#000000","#000000"]
+    borderColor:["#000000","#000000"]
    
     }
   ];
@@ -45,12 +45,11 @@ export class MassIncidentsComponent implements OnInit {
   ngOnInit(): void {
     var is = this.DataTransferService.isMass;
     var not = this.DataTransferService.notMass;
-    this.perc = localStorage.getItem("massPerc");
+    var temp = localStorage.getItem("massPerc")
+    var temp2 = parseFloat(temp);
+    this.perc = (temp2).toFixed(5);
    console.log(is)
-   var ab = parseFloat(is);
-   var bc = parseFloat(not);
-    
-   this.percent = (ab/bc).toFixed(5);
+  
   }
 
 }
