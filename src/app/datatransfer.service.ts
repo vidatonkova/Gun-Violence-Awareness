@@ -18,36 +18,37 @@ export class DataTransferService {
     this.is_Mass;
     this.not_Mass;
   }
-
+//sets the setOfGuns variable
 public set setOfGuns(x){
   this.set_of_guns = x;
 }
+//gets the setOfGuns variable
 public get setOfGuns() {
   console.log("ye");
   return this.set_of_guns;
 }
-
+//gets the number of mass shootings
 public get isMass(){
   return localStorage.getItem("isMass");
 }
-
+//gets the number of non-mass shootings
 public get notMass(){
   return localStorage.getItem("notMass");
 }
-
+//stores the values of the map for mass shootings
   printValsMap(hash ,x){
     var notMass = hash.get("false");
     var mass = hash.get("true");
     
     console.log(notMass);
     console.log(mass);
-    var y = performance.now();
+    var y = performance.now(); //stops the time
       var z = y-x;
       var a = z.toString();
       console.log(a);
       localStorage.setItem('maptime', a);
   }
-
+//collects the data for the mass shootings using a map
   massShootingMap(){
     var d = new Date();
     var x = performance.now();
@@ -58,11 +59,10 @@ public get notMass(){
     hash.set("true", 0);
     hash.set("false", 0);
     this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
-      console.log("fdkaslf");
-      for(let i = 0; i < 9225; i++){ 
+      for(let i = 0; i < 9225; i++){ //iterates through the data set and gets the data
         if(data1[i].n_killed != undefined){
 
-        if(data1[i].n_killed > 2){
+        if(data1[i].n_killed > 2){ //flags it appropriately
           var currVal = hash.get("true");
           hash.delete("true");
           currVal = currVal + 1;
@@ -287,11 +287,11 @@ public get notMass(){
     })
    
   }
-
+//stores the values of the mass shooting for the heap
   printVals(heap ,x){
     var notmass = 0;
     var Mass = 0;
-    while(heap.top() == 0){
+    while(heap.top() == 0){//getting values for the two fields
       notmass++;
       heap.pop();
     }
@@ -303,7 +303,7 @@ public get notMass(){
     console.log(Mass);
     this.is_Mass = Mass;
     this.not_Mass = notmass;
-    var y = performance.now();
+    var y = performance.now(); //stop time
       var z = y-x;
       var a = z.toString();
       console.log(a);
@@ -312,15 +312,14 @@ public get notMass(){
       localStorage.setItem('notMass', notmass.toString());
       localStorage.setItem("massPerc", (this.is_Mass/(this.is_Mass+this.not_Mass)*100).toString());
   }
-
+//gets mass shooting data using the heap data structure
   massShootingHeap(){
     var d = new Date();
-    var x = performance.now();
+    var x = performance.now(); //start time
     var Heap = require('heap');
     var heap = new Heap();
     this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
-      console.log("fdkaslf");
-      for(let i = 0; i < 9225; i++){ 
+      for(let i = 0; i < 9225; i++){ //get the data and store it in the heap
         if(data1[i].n_killed != undefined){
 
         if(data1[i].n_killed > 2){
@@ -468,10 +467,9 @@ public get notMass(){
       this.printVals(heap, x);
     })
   }
-
+//stores the values for the number of guns for the heap
   printValsWeapHeap(heap ,x){
-     //var orange: Pair<number,number> = [0,0];
-      //food.push(orange);
+     
       //go through and look for top three values and store in array as discussed previously
       type Pair<T,K> = [T,K];
       type Pairs<T,K> = Pair<T,K>[];
@@ -480,7 +478,7 @@ public get notMass(){
       var currentValue = heap.peek();
       var counter = 1;
       
-      while(heap.size()>0){
+      while(heap.size()>0){//pop each pair and store the values
         heap.pop();
         if(currentValue != heap.peek()){
           //assign curr val's counter to itself
@@ -503,14 +501,14 @@ public get notMass(){
       localStorage.setItem('heaptime', a);
       this.set_of_guns = food;
   }
-
+//gets the number of guns using the heap data structure
   weapTypeHeap(){
     var d = new Date();
-    var x = performance.now();
+    var x = performance.now();//start time
     var Heap = require('heap');
     var heap = new Heap();
     this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
-      for(let i = 0; i < 9225; i++){ 
+      for(let i = 0; i < 9225; i++){  //push back the number of guns
         if(data1[i].n_guns_involved != undefined){
           heap.push(data1[i].n_guns_involved);
         }
@@ -600,14 +598,14 @@ public get notMass(){
       this.printValsWeapHeap(heap, x);
     })
   }
-
+//gets the number of guns usng the map data structure
   weapTypeMap(){
     var d = new Date();
     var x = performance.now();
     var HashMap = require('hashmap');
     var hash = new HashMap();
     this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
-      for(let i = 0; i < 9225; i++){ 
+      for(let i = 0; i < 9225; i++){  //get the number of guns and store in the map
         if(hash.has(data1[i].n_guns_involved) == false){
           hash.set(data1[i].n_guns_involved, 1);
         }
@@ -768,13 +766,13 @@ public get notMass(){
     this.printGunMap(hash, x);
     })
   }
-
+//stores the number of guns from the map data structure
   printGunMap(hash, x){
     type Pair<T,K> = [T,K];
       type Pairs<T,K> = Pair<T,K>[];
       var mapPairs: Pairs<number, number> = [,];
       var i = 1;
-      while(hash.has(i) && i < 30){
+      while(hash.has(i) && i < 30){ //organize data into pairs
         if(hash.has(i)){
           //assign curr val's counter to itself
           var apple: Pair<number, number> = [i, hash.get(i)];
@@ -792,14 +790,14 @@ public get notMass(){
     console.log(a);
     localStorage.setItem('maptime', a);
   }
-
+//gets the data and sorts by state using a heap
   stateHeap(){
     var d = new Date();
-    var x = performance.now();
+    var x = performance.now(); //start time
     var Heap = require('heap');
     var heap = new Heap();
     this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
-      for(let i = 0; i < 9225; i++){ 
+      for(let i = 0; i < 9225; i++){  //push the state into the heap
         if(data1[i].state != undefined){
           heap.push(data1[i].state);
         }
@@ -889,10 +887,10 @@ public get notMass(){
       this.printValsStateHeap(heap, x);
     })
   }
-
+//stores the data for the state incidents using a map
   printStateMap(hash ,x){
-    var stateToFind = localStorage.getItem("state");
-    var numIns = hash.get(stateToFind);
+    var stateToFind = localStorage.getItem("state"); //get the state
+    var numIns = hash.get(stateToFind); //find in map
     console.log(numIns);
     
     var y = performance.now();
@@ -901,15 +899,15 @@ public get notMass(){
       console.log(a);
       localStorage.setItem('maptime', a);
   }
-
+//gets the data for the state incidents using heap
   stateMap(){
     //var d = new Date();
-    var x = performance.now();
+    var x = performance.now();//start time
     var HashMap = require('hashmap');
     var hash = new HashMap();
 
     this.httpClient.get("assets/gundata_part1.json").subscribe(data1 =>{
-      for(let i = 0; i < 9225; i++){ 
+      for(let i = 0; i < 9225; i++){//get the state value and store the counter or increment by 1 
         //data1[i].state
         if(hash.has(data1[i].state)){
           var currVal = hash.get(data1[i].state);
@@ -1079,12 +1077,12 @@ public get notMass(){
     })
 
   }
-
+//stores the data for state incidents using a heap
   printValsStateHeap(heap, x){
     var stateFound = false;
     var totalCases = 0;
     var numInstances = 0;
-    var stateToFind = localStorage.getItem("state");
+    var stateToFind = localStorage.getItem("state"); //get the state desired and count the number of indidents in the heap
     while(heap.size() > 0){
       if(heap.top() == stateToFind){
         numInstances++;
